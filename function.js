@@ -1,6 +1,6 @@
 videojs.registerPlugin('plugin_test', function() {
 	console.log('login_to_function.js-plugin_test');
-	$('.CoverBlockFadeIn').fadeIn('slow/400/fast');
+
 	$(document).ready(function(){
 		console.log('login_to_function.js-Jquery');
 	// SlideDown Display ------------------------------------
@@ -18,7 +18,7 @@ videojs.registerPlugin('plugin_test', function() {
 
 	// FadeIn Display ----------------------------------------
 
-
+		$('.CoverBlockFadeIn').fadeIn('slow/400/fast');
 		$(".CloseBlockFadeOut").click(function(){
 			$('.CoverBlockFadeIn').fadeOut('slow/400/fast');
 		});
