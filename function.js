@@ -15,9 +15,8 @@ videojs.plugin('plugin_test', function() {
 		});
 
 	// FadeIn Display ----------------------------------------
-		$("#FadeIn").click(function(){
-			$('.CoverBlockFadeIn').fadeIn('slow/400/fast');
-		});
+
+		$('.CoverBlockFadeIn').fadeIn('slow/400/fast');
 		$(".CloseBlockFadeOut").click(function(){
 			$('.CoverBlockFadeIn').fadeOut('slow/400/fast');
 		});
