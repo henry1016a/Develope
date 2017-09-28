@@ -2,19 +2,19 @@ videojs.registerPlugin('plugin_test', function() {
 	alert('login_to_function.js-plugin_test');
 
 	$(document).ready(function(){
-		console.log('login_to_function.js-Jquery');
+		alert('login_to_function.js-Jquery');
 	// SlideDown Display ------------------------------------
-		$("#SlideDown").click(function(){
-			$('.CoverBlockSlideDown').stop().animate({
-				top: '0px'
-			}, 1000);
-		});
+		//$("#SlideDown").click(function(){
+		//	$('.CoverBlockSlideDown').stop().animate({
+		//		top: '0px'
+		//	}, 1000);
+		//});
 
-		$(".CloseBlockSlideDown").click(function(){
-			$(".CoverBlockSlideDown").animate({
-				top:'-150%'
-			}, 1000);
-		});
+		//$(".CloseBlockSlideDown").click(function(){
+		//	$(".CoverBlockSlideDown").animate({
+		//		top:'-150%'
+		//	}, 1000);
+		//});
 
 	// FadeIn Display ----------------------------------------
 
