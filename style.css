@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button,textarea, p, blockquote, th, td {margin: 0;padding: 0;}
+img {border: 0;}
+:focus {outline: 0;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+input, button, textarea,select, optgroup, option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}
+code, kbd, samp, tt {font-size: 100%;}
+input, button, textarea, select {*font-size: 100%;}
+body {line-height: 180%;}
+ol, ul, li {list-style: none;}
+:link, :visited , ins {text-decoration: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;} 
+section, article, aside, footer, header, nav, main {display:block;}
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin:0px; padding:0px; border:0px; text-decoration:none; font-family:Microsoft JhengHei, Arial, Helvetica, sans-serif;}
+hr{display:block; height:1px; border:0px; border-top:1px solid #ccc; margin: 1em 0; padding:0px;}
+a{cursor:pointer;}
+.float{float:left;}
+
+html, body { width:100%; height:100%;  background:#fff; word-break: break-all;word-wrap: break-word; font-size:15px;}
+body {overflow-x: hidden; overflow-y: auto;}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.CoverBlockSlideDown{
+	background: rgba(0, 0, 0, 0.9);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: -150%;
+	z-index: 15000;
+}
+.CloseBlockSlideDown{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.CoverBlockFadeIn{
+	display: none;
+	background: rgba(0, 0, 0, 0.9);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	z-index: 15000;
+}
+.CloseBlockFadeOut{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#MainBlock, #MainBlock1, #MainBlock2, #video{
+	opacity: 1;
+	margin: 0px auto;
+	top:50%;
+	transform:translateY(-50%);
+}
