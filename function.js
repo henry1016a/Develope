@@ -1,6 +1,7 @@
 videojs.plugin('plugin_test', function() {
+	console.log('login_to_function.js-plugin_test');
 	$(document).ready(function(){
-
+		console.log('login_to_function.js-Jquery');
 	// SlideDown Display ------------------------------------
 		$("#SlideDown").click(function(){
 			$('.CoverBlockSlideDown').stop().animate({
