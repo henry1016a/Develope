@@ -1,8 +1,6 @@
 videojs.registerPlugin('plugin_test', function() {
-	alert('login_to_function.js-plugin_test');
 
 	$(document).ready(function(){
-		alert('login_to_function.js-Jquery');
 	// SlideDown Display ------------------------------------
 		//$("#SlideDown").click(function(){
 		//	$('.CoverBlockSlideDown').stop().animate({
