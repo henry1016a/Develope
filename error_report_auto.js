@@ -25,7 +25,7 @@ videojs.registerPlugin("ErrorReport",function(){
                 error_ip = JSON.parse(JSON.stringify(data.ip));
                 $.ajax({
                     type:"GET",
-                    url:"http://13.115.10.15/error_listener/",
+                    url:"http://52.193.220.96/error_listener/",
                     data:{"error_report": error_report, "error_ip": error_ip},
                     success: function(ret){
                         console.log("send report success");
