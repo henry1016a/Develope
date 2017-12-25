@@ -28,7 +28,16 @@ videojs.registerPlugin("ErrorReport",function(){
 
                 $(".vjs-errors-ok-button-container").append('<a id="eMarki">Report</a>')
                 $("#eMarki").click(function(){
-                  alert(1);
+                    $.ajax({
+                        type:"GET",
+                        url:"https://52.193.220.96/error_listener/",
+                        data:{"error_report": error_report, "error_ip": error_ip},
+                        success: function(ret){
+                            console.log("send report success");
+                            console.log(data);
+                            window.open("https://docs.google.com/forms/d/1L4dnmWEyZ0F9Ji_KETUaewwCEFw3-uHBnoOHydb-sOU/edit?usp=sharing");
+                        }
+                    });
                 });
             });
 
