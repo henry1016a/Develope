@@ -7,12 +7,7 @@ videojs.registerPlugin("ErrorReport",function(){
         myPlayer.one("loadstart",function(){
 
             myPlayer.on('error', function() {
-                console.log('in erro');
-                var errorOKbtn = $(".vjs-errors-ok-button-container")[0];
-                var newElbtn = document.createElement('button');
-                    newElbtn.id = "eMarki";
-                    newElbtn.textContent = "Report";
-
+                console.log('in error');
                 var error = myPlayer.error();
                 var error_time = new Date();
                 var error_time_GMT8 = error_time.toLocaleString();
@@ -31,19 +26,8 @@ videojs.registerPlugin("ErrorReport",function(){
 
                 });
 
-                newElbtn.onclick = function(){
-                    window.open("https://docs.google.com/forms/d/1L4dnmWEyZ0F9Ji_KETUaewwCEFw3-uHBnoOHydb-sOU/edit?usp=sharing");
-                    $.ajax({
-                        type:"GET",
-                        url:"https://52.193.220.96/error_listener/",
-                        data:{"error_report": error_report, "error_ip": error_ip},
-                        success: function(ret){
-                            console.log("send report success");
-                            console.log(data);
-                        }
-                    });
-                };
-                errorOKbtn.appendChild(newElbtn);
+                $(".vjs-errors-ok-button-container").append('<a id="eMarki">Report</a>')
+                $("#eMarki").click(alert(1));
             });
 
         });
