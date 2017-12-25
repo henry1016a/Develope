@@ -1,44 +1,50 @@
 videojs.registerPlugin("ErrorReport",function(){
-    var btn = document.getElementById('eMarkBtn');
     var error_ip;
     var error_report;
 
-        $(function(){
-            var myPlayer = videojs('vjs_video_3');
+    $(function(){
+        var myPlayer = videojs('vjs_video_3');
+        myPlayer.one("loadstart",function(){
 
-        myPlayer.on('error', function() {
-            console.log('in erro');
-            var error = myPlayer.error();
-            var error_time = new Date();
-            var error_time_GMT8 = error_time.toLocaleString();
-            // 錯誤發生時間
+            myPlayer.on('error', function() {
+                console.log('in erro');
+                var errorOKbtn = $(".vjs-errors-ok-button-container")[0];
+                var newElbtn = document.createElement('button');
+                    newElbtn.id = "eMarki";
+                    newElbtn.textContent = "Report";
 
-            error_report = 
-                'Uh-oh...Something went wrong!' +
-                device_type() +
-                '; \nError Time: ' + error_time +
-                '; \nError Code: ' + error.code +
-                '; \nError Msg: ' + error.message;
-            // 錯誤資訊字串定義
+                var error = myPlayer.error();
+                var error_time = new Date();
+                var error_time_GMT8 = error_time.toLocaleString();
+                // 錯誤發生時間
 
-            $.getJSON('https://ipinfo.io', function(data){
-                error_ip = JSON.parse(JSON.stringify(data.ip));
+                error_report = 
+                    'Uh-oh...Something went wrong!' +
+                    device_type() +
+                    '; \nError Time: ' + error_time +
+                    '; \nError Code: ' + error.code +
+                    '; \nError Msg: ' + error.message;
+                // 錯誤資訊字串定義
 
-            });
+                $.getJSON('https://ipinfo.io', function(data){
+                    error_ip = JSON.parse(JSON.stringify(data.ip));
 
-        });
+                });
 
-        $("#eMarki").click(function(){
-            console.log('in click function');
-            console.log(error_ip);
-            $.ajax({
-                type:"GET",
-                url:"https://52.193.220.96/error_listener/",
-                data:{"error_report": error_report, "error_ip": error_ip},
-                success: function(ret){
-                    console.log("send report success");
-                    console.log(data);
-                }
+                $("#eMarki").click(function(){
+                    console.log('in click function');
+                    console.log(error_ip);
+                    $.ajax({
+                        type:"GET",
+                        url:"https://52.193.220.96/error_listener/",
+                        data:{"error_report": error_report, "error_ip": error_ip},
+                        success: function(ret){
+                            console.log("send report success");
+                            console.log(data);
+                        }
+                    });
+                });
+                errorOKbtn.appendChild(newElbtn);
             });
         });
     });
