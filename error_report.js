@@ -26,7 +26,7 @@ videojs.registerPlugin("ErrorReport",function(){
 
                 });
 
-                $(".vjs-errors-ok-button-container").append('<a id="eMarki">Report</a>')
+                $(".vjs-errors-ok-button-container").append('<button id="eMarki">Report</button>')
                 $("#eMarki").click(function(){
                     $.ajax({
                         type:"GET",
