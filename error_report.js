@@ -1,13 +1,10 @@
 videojs.registerPlugin("ErrorReport",function(){
-    var errorOKbtn = document.getElementsByClassName("vjs-errors-ok-button-container")[0];
+    var btn = document.getElementById('eMarkBtn');
     var error_ip;
     var error_report;
 
-    $(function(){
-        var myPlayer = videojs('vjs_video_3');
-
-        
-
+        $(function(){
+            var myPlayer = videojs('vjs_video_3');
 
         myPlayer.on('error', function() {
             console.log('in erro');
@@ -29,25 +26,20 @@ videojs.registerPlugin("ErrorReport",function(){
 
             });
 
-            var newElbtn = document.createElement('button');
-                newElbtn.id = "eMarki";
-                newElbtn.textContent = "Report";
-                newElbtn.onclick = function(){
-                    window.open("https://docs.google.com/forms/d/1L4dnmWEyZ0F9Ji_KETUaewwCEFw3-uHBnoOHydb-sOU/edit?usp=sharing");
-                    console.log('in click function');
-                    console.log(error_ip);
-                    $.ajax({
-                        type:"GET",
-                        url:"https://52.193.220.96/error_listener/",
-                        data:{"error_report": error_report, "error_ip": error_ip},
-                        success: function(ret){
-                            console.log("send report success");
-                            console.log(data);
-                        }
-                    });
-                };
-                errorOKbtn.appendChild(newElbtn);   
-            }); 
+        });
+
+        $("#eMarki").click(function(){
+            console.log('in click function');
+            console.log(error_ip);
+            $.ajax({
+                type:"GET",
+                url:"https://52.193.220.96/error_listener/",
+                data:{"error_report": error_report, "error_ip": error_ip},
+                success: function(ret){
+                    console.log("send report success");
+                    console.log(data);
+                }
+            });
         });
     });
 
