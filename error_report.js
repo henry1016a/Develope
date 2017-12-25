@@ -27,7 +27,9 @@ videojs.registerPlugin("ErrorReport",function(){
                 });
 
                 $(".vjs-errors-ok-button-container").append('<a id="eMarki">Report</a>')
-                $("#eMarki").click(alert(1));
+                $("#eMarki").click(fucntion(){
+                  alert(1);
+                });
             });
 
         });
