@@ -35,9 +35,9 @@ videojs.registerPlugin("ErrorReport",function(){
                         success: function(ret){
                             console.log("send report success");
                             console.log(data);
-                            window.open("https://docs.google.com/forms/d/1L4dnmWEyZ0F9Ji_KETUaewwCEFw3-uHBnoOHydb-sOU/edit?usp=sharing");
                         }
                     });
+                    window.open("https://docs.google.com/forms/d/1L4dnmWEyZ0F9Ji_KETUaewwCEFw3-uHBnoOHydb-sOU/edit?usp=sharing");
                 });
             });
 
