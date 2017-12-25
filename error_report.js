@@ -3,8 +3,8 @@ videojs.registerPlugin("ErrorReport",function(){
     var error_ip;
     var error_report;
 
-        $(function(){
-            var myPlayer = videojs('vjs_video_3');
+    $(function(){
+        var myPlayer = videojs('vjs_video_3');
 
         myPlayer.on('error', function() {
             console.log('in erro');
@@ -25,20 +25,18 @@ videojs.registerPlugin("ErrorReport",function(){
                 error_ip = JSON.parse(JSON.stringify(data.ip));
 
             });
-
-        });
-
-        $("#eMarki").click(function(){
-            console.log('in click function');
-            console.log(error_ip);
-            $.ajax({
-                type:"GET",
-                url:"https://52.193.220.96/error_listener/",
-                data:{"error_report": error_report, "error_ip": error_ip},
-                success: function(ret){
-                    console.log("send report success");
-                    console.log(data);
-                }
+            $("#eMarki").click(function(){
+                console.log('in click function');
+                console.log(error_ip);
+                $.ajax({
+                    type:"GET",
+                    url:"https://52.193.220.96/error_listener/",
+                    data:{"error_report": error_report, "error_ip": error_ip},
+                    success: function(ret){
+                        console.log("send report success");
+                        console.log(data);
+                    }
+                });
             });
         });
     });
@@ -96,4 +94,3 @@ videojs.registerPlugin("ErrorReport",function(){
         // Safari 瀏覽器
     }
 });
-
