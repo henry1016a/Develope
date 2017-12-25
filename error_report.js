@@ -31,9 +31,8 @@ videojs.registerPlugin("ErrorReport",function(){
 
                 });
 
-                $("#eMarki").click(function(){
-                    console.log('in click function');
-                    console.log(error_ip);
+                newElbtn.onclick = function(){
+                    window.open("https://docs.google.com/forms/d/1L4dnmWEyZ0F9Ji_KETUaewwCEFw3-uHBnoOHydb-sOU/edit?usp=sharing");
                     $.ajax({
                         type:"GET",
                         url:"https://52.193.220.96/error_listener/",
@@ -43,9 +42,10 @@ videojs.registerPlugin("ErrorReport",function(){
                             console.log(data);
                         }
                     });
-                });
+                };
                 errorOKbtn.appendChild(newElbtn);
             });
+
         });
     });
 
