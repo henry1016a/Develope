@@ -28,7 +28,7 @@ videojs.registerPlugin("ErrorReport",function(){
 
         });
 
-        $("#itema").click(function(){
+        $("#eMarki").click(function(){
             console.log('in click function');
             console.log(error_ip);
             $.ajax({
